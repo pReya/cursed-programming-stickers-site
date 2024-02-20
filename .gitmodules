@@ -1,0 +1,3 @@
+[submodule "public/cursed-images"]
+	path = public/cursed-images
+	url = https://github.com/pReya/cursed-programming-stickers.git
