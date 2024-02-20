@@ -1,4 +1,4 @@
-interface Technology {
+export interface Technology {
   name: string;
   id: string;
   url: string;

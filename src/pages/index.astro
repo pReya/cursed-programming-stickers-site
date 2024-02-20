@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import ImageCard from "../components/ImageCard";
+import ImageCard, { type Technology } from "../components/ImageCard";
 
 const allTechnologies = (await getCollection("technology")).map(
   ({ data, id }) => ({ ...data, id })
@@ -56,8 +56,11 @@ console.log(`Found ${cursedImageNames.length} cursed images`);
           Cursed Programming Logos
         </h2>
         <p class="mt-6">
-          Source: <a class="text-sm underline" href="https://github.com/mkrl/misbrands" target="_blank"
-            >`misbrands` on GitHub</a>
+          Source: <a
+            class="text-sm underline"
+            href="https://github.com/mkrl/misbrands"
+            target="_blank">`misbrands` on GitHub</a
+          >
         </p>
         <p class="mt-6 text-lg leading-8 text-gray-600">
           Do these look familiar? Well, look again.
@@ -66,7 +69,11 @@ console.log(`Found ${cursedImageNames.length} cursed images`);
       <div class="grid grid-cols-[1fr_1fr_1fr] gap-2">
         {
           cursedImageNames?.map((image) => (
-            <ImageCard id={image.id} img={image.path} technologies={image.technologies} />
+            <ImageCard
+              id={image.id}
+              img={image.path}
+              technologies={image.technologies as [Technology, Technology]}
+            />
           ))
         }
       </div>
