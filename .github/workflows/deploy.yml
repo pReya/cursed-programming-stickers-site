@@ -24,9 +24,9 @@ jobs:
           submodules: true
       - run: ls -la public
       - name: Install, build, and upload your site
-        uses: withastro/action@v1
+        uses: withastro/action@v3
         with:
-          node-version: 21
+          node-version: 22
 
   deploy:
     needs: build
@@ -37,4 +37,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4

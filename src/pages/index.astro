@@ -2,20 +2,18 @@
 import { getCollection } from "astro:content";
 import ImageCard, { type Technology } from "../components/ImageCard";
 
-const allTechnologies = (await getCollection("technology")).map(
+const allTechnologies: Technology[] = (await getCollection("technology")).map(
   ({ data, id }) => ({ ...data, id })
 );
 
-const cursedImageNames = Object.values(
+const cursedImageNames = Object.keys(
   import.meta.glob("../../public/cursed-images/*.svg", {
     eager: true,
     query: "?url",
   })
 )
   .map((module) => {
-    const fullPath = (module as { default: string })?.default
-      .split("/public")
-      .at(-1) as string;
+    const fullPath = module.split("/public").at(-1) as string;
 
     return {
       path: fullPath,
@@ -35,12 +33,10 @@ const cursedImageNames = Object.values(
           allTechnologies.find((tech) => tech.id === technologyId1),
         technologyId2 &&
           allTechnologies.find((tech) => tech.id === technologyId2),
-      ].filter(Boolean),
+      ].filter(Boolean) as Technology[],
     };
   });
 
-console.log(JSON.stringify(cursedImageNames, null, 2));
-console.log(`Found ${cursedImageNames.length} cursed images`);
 ---
 
 <html lang="en">
@@ -73,7 +69,7 @@ console.log(`Found ${cursedImageNames.length} cursed images`);
             <ImageCard
               id={image.id}
               img={image.path}
-              technologies={image.technologies as [Technology, Technology]}
+              technologies={image.technologies}
             />
           ))
         }
