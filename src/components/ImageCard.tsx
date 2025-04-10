@@ -27,7 +27,15 @@ const ImageCard: React.FC<ImageCardProps> = ({
       }`}
     >
       <div className="flex-shrink-0 p-6">
-        <img className="h-36 w-36" src={import.meta.env.BASE_URL + img} alt={imgAlt} />
+        <img
+          className="h-36 w-36"
+          src={
+            import.meta.env.BASE_URL !== "/"
+              ? import.meta.env.BASE_URL + img
+              : img
+          }
+          alt={imgAlt}
+        />
       </div>
       {technologies.length === 2 && (
         <div className="w-full">
