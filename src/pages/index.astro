@@ -36,7 +36,6 @@ const cursedImageNames = Object.keys(
       ].filter(Boolean) as Technology[],
     };
   });
-
 ---
 
 <html lang="en">
@@ -45,6 +44,15 @@ const cursedImageNames = Object.keys(
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Cursed Programming Logos Stickers</title>
+    {
+      import.meta.env.MODE === "production" && (
+        <script
+          defer
+          src="https://analytics.bitbetter.de/script.js"
+          data-website-id="36744208-d7f6-48ae-b266-301410f32a18"
+        />
+      )
+    }
   </head>
   <body>
     <main class="p-8 flex flex-col items-center">
