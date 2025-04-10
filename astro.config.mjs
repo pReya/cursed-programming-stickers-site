@@ -5,7 +5,6 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://preya.github.io/',
-  base: '/cursed-programming-stickers-site',
+  site: 'https://cursed-logos.dev/',
   integrations: [react(), tailwind()]
 });
