@@ -28,7 +28,7 @@ const ImageCard: React.FC<ImageCardProps> = ({
     >
       <div className="flex-shrink-0 p-6">
         <img
-          className="h-36 w-36"
+          className="size-40"
           src={
             import.meta.env.BASE_URL !== "/"
               ? import.meta.env.BASE_URL + img

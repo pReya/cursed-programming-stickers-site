@@ -41,9 +41,11 @@ const cursedImageNames = Object.keys(
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    <title>Cursed Programming Logos Stickers</title>
+    <title>Cursed-Logos.dev: Coding Logos gone wrong</title>
+    <meta name="description" content="These logos look familiar, but they're not quite right. It's always a nice take on an existing logo, where the words are replace with the name of a similar technology." />
+    <meta name="keywords" content="programming logos, programming language, language logos, coding logos, developer logos" />
     {
       import.meta.env.MODE === "production" && (
         <script
@@ -55,11 +57,14 @@ const cursedImageNames = Object.keys(
     }
   </head>
   <body>
-    <main class="p-8 flex flex-col items-center">
-      <div class="mx-auto max-w-2xl text-center mb-6">
+    <main class="p-6 md:p-8 flex flex-col items-center">
+      <div class="mx-auto max-w-[768px] text-center mb-6">
         <h2 class="text-4xl font-bold tracking-tight text-gray-900">
-          Cursed Programming Logos
+          Cursed-Logos.dev
         </h2>
+        <p class="mt-6 text-lg leading-8 text-gray-600">
+          Do these look familiar? Well, look again.
+        </p>
         <p class="mt-6">
           Source: <a
             class="text-sm underline"
@@ -67,11 +72,8 @@ const cursedImageNames = Object.keys(
             target="_blank">`misbrands` on GitHub</a
           >
         </p>
-        <p class="mt-6 text-lg leading-8 text-gray-600">
-          Do these look familiar? Well, look again.
-        </p>
       </div>
-      <div class="grid grid-cols-[1fr_1fr_1fr] gap-2">
+      <div class="grid grid-cols-[1fr_1fr] md:grid-cols-[1fr_1fr_1fr] gap-2 md:gap-4">
         {
           cursedImageNames?.map((image) => (
             <ImageCard
